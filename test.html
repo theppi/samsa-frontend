@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <textarea  rows="30" cols="120" id="content">
+{
+  "purchaseId": 93857577,
+  "licenseeContact": {
+    "locale": "en-US",
+    "email": "thomas.eppers@realobjects.com"
+  },
+  "items": [
+    {
+      "productName": "PDFreactor",
+      "quantity": 1,
+      "recurringBilling": {
+        "subscriptionId": "S18429513",
+        "intervalNumber": 0,
+        "gracePeriodDays": 2,
+        "statusId": "ACT",
+        "status": "Active",
+        "itemStatusId": "ACT",
+        "itemStatus": "Active",
+        "nextBillingDate": "2018-11-30T15:49:58.383398",
+        "cancellationUrl": "https://www.cleverbridge.com/864/crb/93857572-puWTTfDOWt9oPS6o6vEN-1",
+        "changePaymentSubscriptionUrl": "https://www.cleverbridge.com/864/scp/S18429519-1fJi7jiklwJRAxRr",
+        "licensePeriodInMonths": 12
+      }
+    }
+  ]
+}
+</textarea>
+    
+    <p>URL: <input type="text" value="https://eghb665psd.execute-api.eu-central-1.amazonaws.com/DEV/cleverbridge" style="width: 75vh" id="url"><button onclick="post()">POST</button></p>
+    <textarea  rows="15" cols="120" id="answer"></textarea>
+    <script>
+        var post = function() {
+            $.post($("#url").val(),$("#content").val())
+                .then(res=> {
+                    $("#answer").val(JSON.stringify(res, null, 2));
+                })
+                .catch(err => {
+                    $("#answer").val(JSON.stringify(err, null, 2));
+                });
+        };
+    </script>
+</body>
+</html>

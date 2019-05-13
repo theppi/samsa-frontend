@@ -1,0 +1,61 @@
+<div class="container" data-ng-app="samsa" data-ng-controller="signup" id="signup-container">
+    <img id="loading-img" src="img/dual-ring-loader.svg" alt="loading...">
+    <h3>Signup</h3>
+    <p>Please enter your email-address and choose a password.</p>
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Register an Account</div>
+            <div class="card-body" id="signup-form">
+                <form>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                                required="required">
+                            <label for="inputEmail">Email address</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                                        required="required">
+                                    <label for="inputPassword">Password</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password"
+                                        required="required">
+                                    <label for="confirmPassword">Confirm password</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" ng-click="register($event)" submit="signup-form">Register</button>
+                </form>
+                <div class="text-center">
+                    <a class="d-block small mt-3" href="#!/login">Login Page</a>
+                    <!-- <a class="d-block small" href="forgot-password.html">Forgot Password?</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thank you for your registration</h5>
+                    <a href="#!/" class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </a>
+                </div>
+                <div class="modal-body">Please check your email account for our activation mail</div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal" aria-label="Ok">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
